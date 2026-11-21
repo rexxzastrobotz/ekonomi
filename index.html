@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAL BUMN & BUMD INDONESIA — Sinergi Membangun Ekonomi Negeri</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Warna & Tipografi Korporat -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        corpNavy: '#0A2540',
+                        corpBlue: '#0066B2',
+                        corpTeal: '#0284C7',
+                        corpGold: '#D97706',
+                        corpBg: '#F8FAFC',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+            overflow-x: hidden;
+        }
+        /* Pola latar belakang arsitektural korporat */
+        .hero-corporate-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #0d3156 55%, #004e8a 100%);
+            position: relative;
+        }
+        .hero-grid-overlay {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+        /* Animasi halus untuk transisi tab dan modal */
+        .animate-fade-up {
+            animation: fadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-500/20 selection:text-[#0A2540]">
+
+    <!-- =====================================================================
+         TOP INSTITUTIONAL BAR
+    ====================================================================== -->
+    <div class="bg-[#06182b] text-slate-300 border-b border-white/10 text-xs py-2 hidden sm:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span class="tracking-wide font-medium">Republik Indonesia &bull; Sistem Informasi Kelembagaan Badan Usaha Milik Negara &amp; Daerah</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-400">
+                <span><i class="fa-solid fa-scale-balanced text-[#D97706] mr-1.5"></i>Amanat Pasal 33 UUD 1945</span>
+                <span>&bull;</span>
+                <span>Good Corporate Governance (GCG)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         NAVBAR STICKY KORPORAT
+    ====================================================================== -->
+    <header class="sticky top-0 z-40 bg-[#0A2540]/95 backdrop-blur-md border-b border-white/10 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-18 py-3.5">
+                <!-- Logo / Emblem Korporat -->
+                <a href="#beranda" class="flex items-center gap-3.5 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0066B2] via-[#0284C7] to-[#0A2540] border border-amber-400/50 flex items-center justify-center shadow-md group-hover:border-amber-400 transition-colors">
+                        <!-- Custom SVG Emblem Pilar Ekonomi -->
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 21h18" stroke="#F59E0B" stroke-width="2.2" stroke-linecap="round"/>
+                            <path d="M5 21V7l7-4 7 4v14" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 21v-8h6v8" stroke="#38BDF8" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 9h.01M15 9h.01" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-extrabold text-white text-base sm:text-lg tracking-tight block leading-none">
+                            BUMN &amp; BUMD <span class="text-amber-400">INDONESIA</span>
+                        </span>
+                        <span class="text-[11px] text-sky-200/80 font-medium tracking-wider uppercase mt-1 block">
+                            Sinergi Membangun Ekonomi Negeri
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navigasi Desktop -->
+                <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold">
+                    <a href="#beranda" class="px-3.5 py-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Beranda</a>
+                    <a href="#profil" class="px-3.5 py-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Profil &amp; Regulasi</a>
+                    <a href="#bentuk-usaha" class="px-3.5 py-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Bentuk Usaha</a>
+                    <a href="#peran" class="px-3.5 py-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Peran Strategis</a>
+                    <a href="#komparasi" class="px-3.5 py-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 transition-colors">Komparasi</a>
+                    <a href="#direktori" class="ml-2 px-4 py-2.5 rounded-xl bg-[#0066B2] hover:bg-[#0284C7] text-white border border-sky-400/30 shadow-sm transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-building-shield text-amber-300"></i>
+                        Direktori Perusahaan
+                    </a>
+                </nav>
+
+                <!-- Tombol Menu Mobile -->
+                <button id="mobile-menu-btn" aria-label="Buka Menu Navigasi" class="lg:hidden p-2.5 rounded-xl bg-white/10 text-white hover:bg-white/20 focus:outline-none">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dropdown Navigasi Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0A2540] border-t border-white/10 px-4 pt-2 pb-5 space-y-1">
+            <a href="#beranda" class="mobile-nav-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 font-semibold text-sm">Beranda</a>
+            <a href="#profil" class="mobile-nav-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 font-semibold text-sm">Profil &amp; Regulasi</a>
+            <a href="#bentuk-usaha" class="mobile-nav-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 font-semibold text-sm">Bentuk Usaha</a>
+            <a href="#peran" class="mobile-nav-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 font-semibold text-sm">Peran Strategis</a>
+            <a href="#komparasi" class="mobile-nav-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 font-semibold text-sm">Komparasi</a>
+            <a href="#direktori" class="mobile-nav-link block px-4 py-3 rounded-xl bg-[#0066B2] text-white font-semibold text-sm text-center mt-2">
+                Direktori Perusahaan
+            </a>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         HERO SECTION (TAMPILAN PORTAL EKSEKUTIF)
+    ====================================================================== -->
+    <section id="beranda" class="hero-corporate-bg text-white pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
+        <div class="hero-grid-overlay absolute inset-0 pointer-events-none"></div>
+        <!-- Aksen Cahaya Halus -->
+        <div class="absolute -top-28 right-0 w-[480px] h-[480px] bg-[#0284C7]/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 -left-24 w-[380px] h-[380px] bg-[#D97706]/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl">
+                <!-- Badge Resmi -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/10 border border-amber-400/40 backdrop-blur-sm mb-6">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    <span class="text-xs sm:text-sm font-bold tracking-wider uppercase text-amber-300">
+                        PORTAL INFORMASI BADAN USAHA MILIK NEGARA &amp; DAERAH
+                    </span>
+                </div>
+
+                <!-- Judul Utama -->
+                <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.15] text-white mb-6">
+                    Menggerakkan Roda Perekonomian <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-cyan-200 to-amber-300">Nasional dan Daerah</span>
+                </h1>
+
+                <!-- Subjudul -->
+                <p class="text-slate-200 text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl mb-8 font-normal">
+                    Sinergi strategis <strong>Badan Usaha Milik Negara (BUMN)</strong> dan <strong>Badan Usaha Milik Daerah (BUMD)</strong> sebagai pilar utama demokrasi ekonomi kerakyatan berdasarkan amanat <strong>Pasal 33 UUD 1945</strong> dalam mengelola cabang produksi vital, menyelenggarakan kemanfaatan umum, serta memperkuat kemandirian fiskal bangsa.
+                </p>
+
+                <!-- Tombol Aksi Eksekutif -->
+                <div class="flex flex-wrap items-center gap-4 mb-14">
+                    <a href="#direktori" class="px-6 py-3.5 rounded-xl bg-[#D97706] hover:bg-amber-600 text-white font-bold text-sm sm:text-base shadow-lg shadow-amber-900/30 transition-all flex items-center gap-2.5">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        Telusuri Direktori BUMN &amp; BUMD
+                    </a>
+                    <a href="#profil" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/25 font-semibold text-sm sm:text-base backdrop-blur-sm transition-all flex items-center gap-2.5">
+                        <i class="fa-solid fa-landmark text-sky-300"></i>
+                        Profil Kelembagaan &amp; Regulasi
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4 Kartu Sorotan Utama (Key Pillars) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Pilar 1 -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 hover:bg-white/15 transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-[#D97706]/20 border border-amber-400/40 flex items-center justify-center text-amber-300 mb-4">
+                        <i class="fa-solid fa-scale-balanced text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-amber-300 block mb-1">Landasan Konstitusi</span>
+                    <h2 class="font-bold text-white text-base sm:text-lg leading-snug">Pasal 33 Ayat (2) &amp; (3) UUD 1945</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Cabang produksi vital dan sumber daya alam strategis dikuasai negara untuk kemakmuran rakyat.
+                    </p>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 hover:bg-white/15 transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-[#0284C7]/25 border border-sky-400/40 flex items-center justify-center text-sky-300 mb-4">
+                        <i class="fa-solid fa-coins text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-sky-300 block mb-1">Kontribusi Fiskal</span>
+                    <h2 class="font-bold text-white text-base sm:text-lg leading-snug">Dividen &amp; Pajak untuk APBN &amp; PAD</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Menopang penerimaan negara (PNBP) dan Pendapatan Asli Daerah guna membiayai pembangunan.
+                    </p>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 hover:bg-white/15 transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300 mb-4">
+                        <i class="fa-solid fa-hand-holding-heart text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-300 block mb-1">Orientasi Layanan</span>
+                    <h2 class="font-bold text-white text-base sm:text-lg leading-snug">Kemanfaatan Umum &amp; Pengembangan Usaha</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Menyeimbangkan misi pelayanan publik (PSO) dan penciptaan nilai ekonomi secara profesional.
+                    </p>
+                </div>
+
+                <!-- Pilar 4 -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 hover:bg-white/15 transition-all">
+                    <div class="w-11 h-11 rounded-xl bg-[#0066B2]/35 border border-blue-400/40 flex items-center justify-center text-blue-200 mb-4">
+                        <i class="fa-solid fa-sitemap text-lg"></i>
+                    </div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-blue-200 block mb-1">Klasifikasi Entitas</span>
+                    <h2 class="font-bold text-white text-base sm:text-lg leading-snug">Persero, Perum, Perseroda &amp; Perumda</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Tata kelola bentuk badan hukum usaha negara dan daerah yang adaptif serta berdaya saing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         BAGIAN 1: PROFIL KELEMBAGAAN & LANDASAN HUKUM (#profil)
+    ====================================================================== -->
+    <section id="profil" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div>
+                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0066B2] mb-2">
+                    <span class="w-6 h-0.5 bg-[#D97706]"></span>
+                    <span>Bagian 01 &bull; Kelembagaan &amp; Regulasi</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A2540]">
+                    Profil Kelembagaan &amp; Landasan Hukum
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base max-w-2xl">
+                    Tinjauan komprehensif mengenai kedudukan modal, payung hukum operasional, karakteristik, serta mandat pendirian BUMN dan BUMD.
+                </p>
+            </div>
+
+            <!-- Tab Interaktif BUMN vs BUMD -->
+            <div class="inline-flex p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300/70 self-start md:self-auto">
+                <button id="btn-profil-bumn" onclick="switchProfilTab('bumn')" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0A2540] text-white shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-landmark text-amber-400"></i>
+                    Profil BUMN (Nasional)
+                </button>
+                <button id="btn-profil-bumd" onclick="switchProfilTab('bumd')" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-[#0A2540] transition-all flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-city text-[#0284C7]"></i>
+                    Profil BUMD (Daerah)
+                </button>
+            </div>
+        </div>
+
+        <!-- PANEL 1: PROFIL BUMN (TINGKAT NASIONAL) -->
+        <div id="panel-profil-bumn" class="animate-fade-up space-y-6">
+            <!-- Kartu Definisi & Kedudukan Modal -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-[#0066B2]"></div>
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+                    <div>
+                        <span class="px-3 py-1 rounded-md bg-blue-50 text-[#0066B2] font-bold text-xs uppercase tracking-wider">Entitas Korporasi Nasional</span>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-[#0A2540] mt-2">Definisi Resmi &amp; Kedudukan Modal BUMN</h3>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-200">
+                        <i class="fa-solid fa-shield-halved text-[#D97706]"></i>
+                        <span>Pembina: Kementerian BUMN RI</span>
+                    </div>
+                </div>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed mt-5">
+                    <strong>Badan Usaha Milik Negara (BUMN)</strong> adalah badan usaha yang seluruh atau sebagian besar modalnya (minimal 51%) dimiliki oleh negara melalui penyertaan secara langsung yang berasal dari <strong>kekayaan negara yang dipisahkan</strong>. Pemisahan kekayaan negara dari Anggaran Pendapatan dan Belanja Negara (APBN) ini bertujuan agar pengelolaan modal dilakukan secara profesional mengikuti kaidah korporasi yang sehat, akuntabel, dan berdaya saing global tanpa terhambat mekanisme birokrasi anggaran rutin.
+                </p>
+            </div>
+
+            <!-- Grid Landasan Hukum, Ciri-Ciri & Tujuan Pendirian -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Landasan Hukum BUMN -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 text-[#D97706] flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-gavel text-lg"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-[#0A2540] mb-3">Landasan Hukum BUMN</h4>
+                        <ul class="space-y-3 text-sm text-slate-700">
+                            <li class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                                <strong class="text-[#0A2540] block">UUD 1945 Pasal 33 Ayat (2) &amp; (3)</strong>
+                                <span class="text-xs text-slate-600">Amanat konstitusional penguasaan negara atas sektor produksi vital dan sumber daya alam.</span>
+                            </li>
+                            <li class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                                <strong class="text-[#0A2540] block">UU No. 19 Tahun 2003 tentang BUMN</strong>
+                                <span class="text-xs text-slate-600">Regulasi pokok yang mengatur pendirian, bentuk badan usaha (Persero &amp; Perum), tata kelola, dan restrukturisasi BUMN.</span>
+                            </li>
+                            <li class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                                <strong class="text-[#0A2540] block">UU No. 40 Tahun 2007 tentang PT</strong>
+                                <span class="text-xs text-slate-600">Berlaku bagi BUMN berbentuk Persero sepanjang tidak diatur khusus dalam UU BUMN.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ciri-Ciri Utama BUMN -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 text-[#0066B2] flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-list-check text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-[#0A2540] mb-3">Ciri-Ciri Utama BUMN</h4>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-[#0066B2] mt-1 shrink-0"></i>
+                            <span><strong>Dominasi Kepemilikan Negara:</strong> Seluruh atau paling sedikit 51% saham/modal dimiliki Pemerintah Pusat RI.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-[#0066B2] mt-1 shrink-0"></i>
+                            <span><strong>Mandat Ganda (Dual Mission):</strong> Menjalankan fungsi pelayanan umum (<em>public service</em>) sekaligus memupuk laba (<em>profit oriented</em>).</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-[#0066B2] mt-1 shrink-0"></i>
+                            <span><strong>Pengawasan Negara:</strong> Kebijakan strategis, pengangkatan direksi/komisaris, dan audit berada dalam pengawasan negara.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-[#0066B2] mt-1 shrink-0"></i>
+                            <span><strong>Status Badan Hukum Mandiri:</strong> Bertindak sebagai subjek hukum perdata yang memiliki kekayaan terpisah dari APBN.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tujuan Pendirian BUMN -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-sky-50 border border-sky-200 text-[#0284C7] flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-bullseye text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-[#0A2540] mb-3">Tujuan Pendirian BUMN</h4>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-arrow-trend-up text-[#D97706] mt-1 shrink-0"></i>
+                            <span><strong>Kontribusi Ekonomi &amp; APBN:</strong> Mendorong pertumbuhan ekonomi nasional dan menyumbang penerimaan negara melalui dividen serta pajak.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-arrow-trend-up text-[#D97706] mt-1 shrink-0"></i>
+                            <span><strong>Optimalisasi Keuntungan:</strong> Mengejar laba secara sehat guna meningkatkan nilai perusahaan secara berkelanjutan.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-arrow-trend-up text-[#D97706] mt-1 shrink-0"></i>
+                            <span><strong>Kemanfaatan Umum:</strong> Menyediakan barang dan jasa bermutu tinggi bagi pemenuhan hajat hidup orang banyak.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-arrow-trend-up text-[#D97706] mt-1 shrink-0"></i>
+                            <span><strong>Perintis &amp; Pembina UMKM:</strong> Merintis sektor usaha yang belum digarap swasta serta membina koperasi dan UMKM.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL 2: PROFIL BUMD (TINGKAT DAERAH) -->
+        <div id="panel-profil-bumd" class="hidden animate-fade-up space-y-6">
+            <!-- Kartu Definisi & Kedudukan Modal -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-[#0284C7]"></div>
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+                    <div>
+                        <span class="px-3 py-1 rounded-md bg-sky-50 text-[#0284C7] font-bold text-xs uppercase tracking-wider">Entitas Korporasi Daerah</span>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-[#0A2540] mt-2">Definisi Resmi &amp; Kedudukan Modal BUMD</h3>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs font-semibold text-slate-500 bg-slate-50 px-3.5 py-2 rounded-xl border border-slate-200">
+                        <i class="fa-solid fa-building-columns text-[#0284C7]"></i>
+                        <span>Pemilik: Pemerintah Provinsi / Kabupaten / Kota</span>
+                    </div>
+                </div>
+                <p class="text-slate-700 text-sm sm:text-base leading-relaxed mt-5">
+                    <strong>Badan Usaha Milik Daerah (BUMD)</strong> adalah badan usaha yang seluruh atau sebagian besar modalnya dimiliki oleh Daerah melalui penyertaan secara langsung yang berasal dari <strong>kekayaan daerah yang dipisahkan</strong>. Pendirian BUMD ditetapkan melalui <strong>Peraturan Daerah (Perda)</strong> dengan tujuan utama menggerakkan perekonomian daerah, menyelenggarakan pelayanan dasar publik lokal, serta menjadi sumber <strong>Pendapatan Asli Daerah (PAD)</strong> guna memperkuat otonomi daerah.
+                </p>
+            </div>
+
+            <!-- Grid Landasan Hukum, Ciri-Ciri & Tujuan Pendirian -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Landasan Hukum BUMD -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 text-[#D97706] flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-gavel text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-[#0A2540] mb-3">Landasan Hukum BUMD</h4>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                            <strong class="text-[#0A2540] block">UUD 1945 Pasal 33 &amp; Pasal 18</strong>
+                            <span class="text-xs text-slate-600">Landasan demokrasi ekonomi dan penyelenggaraan otonomi daerah seluas-luasnya.</span>
+                        </li>
+                        <li class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                            <strong class="text-[#0A2540] block">UU No. 23 Tahun 2014 tentang Pemda</strong>
+                            <span class="text-xs text-slate-600">Mengatur kewenangan daerah dalam mendirikan dan mengelola BUMD untuk kesejahteraan masyarakat daerah.</span>
+                        </li>
+                        <li class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                            <strong class="text-[#0A2540] block">PP No. 54 Tahun 2017 tentang BUMD</strong>
+                            <span class="text-xs text-slate-600">Regulasi teknis tata kelola BUMD dalam bentuk Perumda dan Perseroda serta Peraturan Daerah (Perda).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ciri-Ciri Utama BUMD -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-sky-50 border border-sky-200 text-[#0284C7] flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-list-check text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-[#0A2540] mb-3">Ciri-Ciri Utama BUMD</h4>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-[#0284C7] mt-1 shrink-0"></i>
+                            <span><strong>Dibentuk Melalui Perda:</strong> Pendiriannya disahkan oleh Kepala Daerah (Gubernur/Bupati/Wali Kota) bersama DPRD.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-[#0284C7] mt-1 shrink-0"></i>
+                            <span><strong>Modal Kekayaan Daerah:</strong> Seluruh atau minimal 51% modalnya berasal dari kekayaan daerah yang dipisahkan dari APBD.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-[#0284C7] mt-1 shrink-0"></i>
+                            <span><strong>Kepemimpinan Daerah:</strong> Kepala Daerah bertindak selaku Pemegang Saham/KPM dalam pengangkatan Direksi dan Dewan Pengawas.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-check text-[#0284C7] mt-1 shrink-0"></i>
+                            <span><strong>Berbasis Potensi Lokal:</strong> Fokus pada layanan dasar daerah (air bersih, transportasi kota, pasar) dan potensi ekonomi regional.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tujuan Pendirian BUMD -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                    <div class="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 text-[#0066B2] flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-bullseye text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-[#0A2540] mb-3">Tujuan Pendirian BUMD</h4>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-arrow-trend-up text-[#D97706] mt-1 shrink-0"></i>
+                            <span><strong>Peningkatan PAD:</strong> Menyumbang dividen laba usaha untuk memperkuat Pendapatan Asli Daerah dalam APBD.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-arrow-trend-up text-[#D97706] mt-1 shrink-0"></i>
+                            <span><strong>Pemerataan Ekonomi Daerah:</strong> Mendorong pertumbuhan ekonomi daerah secara merata serta memperluas lapangan kerja lokal.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-arrow-trend-up text-[#D97706] mt-1 shrink-0"></i>
+                            <span><strong>Pelayanan Kebutuhan Dasar:</strong> Menyediakan barang dan jasa publik berkualitas tinggi bagi masyarakat daerah setempat.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-arrow-trend-up text-[#D97706] mt-1 shrink-0"></i>
+                            <span><strong>Dukungan UMKM Regional:</strong> Memfasilitasi pembiayaan dan akses pasar bagi pelaku usaha kecil di wilayah daerah.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         BAGIAN 2: KLASIFIKASI BENTUK BADAN USAHA (#bentuk-usaha)
+    ====================================================================== -->
+    <section id="bentuk-usaha" class="py-16 md:py-24 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-12">
+                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0066B2] mb-2">
+                    <span class="w-6 h-0.5 bg-[#D97706]"></span>
+                    <span>Bagian 02 &bull; Struktur Hukum Entitas</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A2540]">
+                    Klasifikasi Bentuk Badan Usaha BUMN &amp; BUMD
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Berdasarkan regulasi perundang-undangan yang berlaku, entitas usaha milik negara maupun daerah diklasifikasikan ke dalam dua bentuk hukum berdasarkan struktur permodalan dan fokus operasionalnya.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- KELOMPOK 1: BENTUK BUMN (TINGKAT NASIONAL) -->
+                <div class="bg-[#F8FAFC] rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between pb-5 mb-6 border-b border-slate-200">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-[#0A2540] text-amber-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-landmark text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-xl text-[#0A2540]">Bentuk Badan Usaha BUMN</h3>
+                                <span class="text-xs font-semibold text-slate-500">Berdasarkan UU No. 19 Tahun 2003</span>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-blue-100 text-[#0066B2] font-bold text-xs">Nasional</span>
+                    </div>
+
+                    <div class="space-y-5">
+                        <!-- 1. PERSERO -->
+                        <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm hover:border-[#0066B2] transition-colors">
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-3 py-1 rounded-lg bg-[#0066B2] text-white font-bold text-xs uppercase tracking-wider">1. PERSERO</span>
+                                <span class="text-xs font-semibold text-slate-500">Perusahaan Perseroan</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-[#0A2540] mb-2">Perusahaan Perseroan (Persero)</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                BUMN berbentuk <strong>Perseroan Terbatas (PT)</strong> yang modalnya terbagi dalam saham di mana seluruh atau <strong>paling sedikit 51% sahamnya</strong> dimiliki oleh Negara Republik Indonesia. Tujuan utamanya adalah mengejar keuntungan (<em>profit oriented</em>) dan meningkatkan daya saing perusahaan.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 mb-3">
+                                <div>
+                                    <span class="text-slate-500 block">Status Pegawai:</span>
+                                    <strong class="text-[#0A2540]">Pegawai Perusahaan Swasta (UU Ketenagakerjaan)</strong>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block">Akses Pasar Modal:</span>
+                                    <strong class="text-[#0A2540]">Dapat melantai di bursa saham (Tbk)</strong>
+                                </div>
+                            </div>
+                            <div class="text-xs text-[#0066B2] font-semibold">
+                                <i class="fa-solid fa-building mr-1.5 text-[#D97706]"></i>
+                                Contoh: PT Pertamina (Persero), PT PLN (Persero), PT BRI (Persero) Tbk.
+                            </div>
+                        </div>
+
+                        <!-- 2. PERUM -->
+                        <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm hover:border-[#D97706] transition-colors">
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-3 py-1 rounded-lg bg-[#D97706] text-white font-bold text-xs uppercase tracking-wider">2. PERUM</span>
+                                <span class="text-xs font-semibold text-slate-500">Perusahaan Umum</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-[#0A2540] mb-2">Perusahaan Umum (Perum)</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                BUMN yang <strong>seluruh modalnya (100%) dimiliki negara dan tidak terbagi atas saham</strong>. Tujuan utamanya adalah menyelenggarakan kemanfaatan umum (<em>Public Service Obligation</em> / PSO) berupa penyediaan barang dan/atau jasa bermutu tinggi sekaligus memupuk keuntungan sehat berdasarkan prinsip pengelolaan perusahaan.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 mb-3">
+                                <div>
+                                    <span class="text-slate-500 block">Struktur Modal:</span>
+                                    <strong class="text-[#0A2540]">100% Kekayaan Negara Dipisahkan (Non-Saham)</strong>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block">Prioritas Utama:</span>
+                                    <strong class="text-[#0A2540]">Kemanfaatan Umum &amp; Stabilitas Layanan</strong>
+                                </div>
+                            </div>
+                            <div class="text-xs text-[#D97706] font-semibold">
+                                <i class="fa-solid fa-building mr-1.5"></i>
+                                Contoh: Perum BULOG, Perum DAMRI, Perum Peruri, Perum Jasa Tirta.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KELOMPOK 2: BENTUK BUMD (TINGKAT DAERAH) -->
+                <div class="bg-[#F8FAFC] rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between pb-5 mb-6 border-b border-slate-200">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 rounded-xl bg-[#0284C7] text-white flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-city text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-xl text-[#0A2540]">Bentuk Badan Usaha BUMD</h3>
+                                <span class="text-xs font-semibold text-slate-500">Berdasarkan PP No. 54 Tahun 2017</span>
+                            </div>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-sky-100 text-[#0284C7] font-bold text-xs">Daerah</span>
+                    </div>
+
+                    <div class="space-y-5">
+                        <!-- 1. PERSERODA -->
+                        <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm hover:border-[#0284C7] transition-colors">
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-3 py-1 rounded-lg bg-[#0284C7] text-white font-bold text-xs uppercase tracking-wider">1. PERSERODA</span>
+                                <span class="text-xs font-semibold text-slate-500">Perusahaan Perseroan Daerah</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-[#0A2540] mb-2">Perusahaan Perseroan Daerah (Perseroda)</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                BUMD yang berbentuk <strong>Perseroan Terbatas (PT)</strong> yang modalnya terbagi dalam saham yang seluruhnya atau <strong>paling sedikit 51% sahamnya</strong> dimiliki oleh satu daerah. Berorientasi komersial untuk mengoptimalkan perolehan laba dan dividen bagi Pendapatan Asli Daerah (PAD).
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 mb-3">
+                                <div>
+                                    <span class="text-slate-500 block">Struktur Modal:</span>
+                                    <strong class="text-[#0A2540]">Terbagi atas Saham (Min. 51% Milik Pemda)</strong>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block">Fleksibilitas Bisnis:</span>
+                                    <strong class="text-[#0A2540]">Dapat bermitra strategis dengan swasta</strong>
+                                </div>
+                            </div>
+                            <div class="text-xs text-[#0284C7] font-semibold">
+                                <i class="fa-solid fa-building mr-1.5 text-[#D97706]"></i>
+                                Contoh: PT MRT Jakarta (Perseroda), Bank Pembangunan Daerah (BPD).
+                            </div>
+                        </div>
+
+                        <!-- 2. PERUMDA -->
+                        <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm hover:border-[#0A2540] transition-colors">
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-3 py-1 rounded-lg bg-[#0A2540] text-amber-300 font-bold text-xs uppercase tracking-wider">2. PERUMDA</span>
+                                <span class="text-xs font-semibold text-slate-500">Perusahaan Umum Daerah</span>
+                            </div>
+                            <h4 class="font-bold text-lg text-[#0A2540] mb-2">Perusahaan Umum Daerah (Perumda)</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                BUMD yang <strong>seluruh modalnya (100%) dimiliki oleh satu daerah dan tidak terbagi atas saham</strong>. Berfokus pada penyelenggaraan pelayanan publik dasar bagi masyarakat daerah secara merata, terjangkau, dan berkelanjutan dengan tetap menerapkan tata kelola korporasi yang sehat.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 mb-3">
+                                <div>
+                                    <span class="text-slate-500 block">Struktur Modal:</span>
+                                    <strong class="text-[#0A2540]">100% Kekayaan Satu Daerah (Non-Saham)</strong>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block">Prioritas Utama:</span>
+                                    <strong class="text-[#0A2540]">Pelayanan Dasar Publik Masyarakat Daerah</strong>
+                                </div>
+                            </div>
+                            <div class="text-xs text-[#0A2540] font-semibold">
+                                <i class="fa-solid fa-building mr-1.5 text-[#0284C7]"></i>
+                                Contoh: Perumda Air Minum (PDAM), Perumda Pasar Jaya.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         BAGIAN 3: PERAN STRATEGIS DALAM PEREKONOMIAN (#peran)
+    ====================================================================== -->
+    <section id="peran" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <div class="inline-flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0066B2] mb-2">
+                <span class="w-6 h-0.5 bg-[#D97706]"></span>
+                <span>Bagian 03 &bull; Kontribusi Pembangunan</span>
+                <span class="w-6 h-0.5 bg-[#D97706]"></span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A2540]">
+                Peran Strategis BUMN &amp; BUMD dalam Perekonomian
+            </h2>
+            <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                Klik pada setiap kartu peran strategis di bawah ini untuk melihat rincian implementasi operasional dan contoh nyata dampaknya di lapangan.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Peran 1 -->
+            <div onclick="togglePeranCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-[#0066B2] transition-all cursor-pointer group">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-[#0066B2] flex items-center justify-center text-xl group-hover:bg-[#0066B2] group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-400">01 / 05</span>
+                </div>
+                <h3 class="font-bold text-lg text-[#0A2540] mb-2">Pelaksana Pelayanan Publik (Public Service Obligation)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Menjamin ketersediaan barang dan jasa kebutuhan pokok yang menguasai hajat hidup orang banyak dengan kualitas baik dan tarif terjangkau hingga daerah terpencil.
+                </p>
+                <div class="peran-detail hidden mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 bg-blue-50/70 p-3.5 rounded-xl space-y-1.5 animate-fade-up">
+                    <strong class="text-[#0066B2] block"><i class="fa-solid fa-circle-info mr-1"></i> Implementasi Lapangan:</strong>
+                    <p>Program BBM Satu Harga oleh PT Pertamina (Persero), penyaluran listrik bersubsidi bagi rumah tangga prasejahtera oleh PT PLN (Persero), serta distribusi air bersih layak minum oleh PDAM.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0066B2]">
+                    <span class="toggle-label">Lihat Implementasi Lapangan</span>
+                    <i class="fa-solid fa-chevron-down transition-transform duration-200 toggle-icon"></i>
+                </div>
+            </div>
+
+            <!-- Peran 2 -->
+            <div onclick="togglePeranCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-[#D97706] transition-all cursor-pointer group">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-[#D97706] flex items-center justify-center text-xl group-hover:bg-[#D97706] group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-sack-dollar"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-400">02 / 05</span>
+                </div>
+                <h3 class="font-bold text-lg text-[#0A2540] mb-2">Sumber Penerimaan Negara (APBN) &amp; Daerah (PAD)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Menghasilkan laba korporasi yang disetorkan sebagai dividen serta kontribusi pajak untuk memperkuat kapasitas fiskal pemerintah pusat dan pemerintah daerah.
+                </p>
+                <div class="peran-detail hidden mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 bg-amber-50/70 p-3.5 rounded-xl space-y-1.5 animate-fade-up">
+                    <strong class="text-[#D97706] block"><i class="fa-solid fa-circle-info mr-1"></i> Implementasi Lapangan:</strong>
+                    <p>Setoran dividen BUMN (seperti BRI, Mandiri, Pertamina, Telkom) masuk sebagai Penerimaan Negara Bukan Pajak (PNBP) di APBN, sementara laba BPD (Bank Pembangunan Daerah) menyumbang langsung pada PAD di APBD.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#D97706]">
+                    <span class="toggle-label">Lihat Implementasi Lapangan</span>
+                    <i class="fa-solid fa-chevron-down transition-transform duration-200 toggle-icon"></i>
+                </div>
+            </div>
+
+            <!-- Peran 3 -->
+            <div onclick="togglePeranCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-[#0284C7] transition-all cursor-pointer group">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-sky-50 text-[#0284C7] flex items-center justify-center text-xl group-hover:bg-[#0284C7] group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-400">03 / 05</span>
+                </div>
+                <h3 class="font-bold text-lg text-[#0A2540] mb-2">Perintis Sektor Usaha Strategis &amp; Padat Modal</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Mengembangkan bidang usaha yang memerlukan investasi modal sangat besar, teknologi tinggi, atau berisiko tinggi yang belum mampu dimasuki sektor swasta.
+                </p>
+                <div class="peran-detail hidden mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 bg-sky-50/70 p-3.5 rounded-xl space-y-1.5 animate-fade-up">
+                    <strong class="text-[#0284C7] block"><i class="fa-solid fa-circle-info mr-1"></i> Implementasi Lapangan:</strong>
+                    <p>Operasional trayek angkutan darat perintis di kawasan 3T (Tertinggal, Terdepan, Terluar) oleh Perum DAMRI serta pembangunan infrastruktur transportasi massal modern oleh PT MRT Jakarta (Perseroda).</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0284C7]">
+                    <span class="toggle-label">Lihat Implementasi Lapangan</span>
+                    <i class="fa-solid fa-chevron-down transition-transform duration-200 toggle-icon"></i>
+                </div>
+            </div>
+
+            <!-- Peran 4 -->
+            <div onclick="togglePeranCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-[#0A2540] transition-all cursor-pointer group">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-slate-100 text-[#0A2540] flex items-center justify-center text-xl group-hover:bg-[#0A2540] group-hover:text-amber-400 transition-colors">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-400">04 / 05</span>
+                </div>
+                <h3 class="font-bold text-lg text-[#0A2540] mb-2">Stabilisator Perekonomian dan Ketahanan Nasional</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Menjaga stabilitas harga komoditas strategis, mengendalikan laju inflasi pangan dan energi, serta menjadi penyeimbang pasar agar terhindar dari monopoli swasta.
+                </p>
+                <div class="peran-detail hidden mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 bg-slate-100 p-3.5 rounded-xl space-y-1.5 animate-fade-up">
+                    <strong class="text-[#0A2540] block"><i class="fa-solid fa-circle-info mr-1"></i> Implementasi Lapangan:</strong>
+                    <p>Pengelolaan Cadangan Beras Pemerintah (CBP) dan stabilisasi pasokan pangan oleh Perum BULOG serta pengelolaan pasar rakyat dan distribusi bahan pokok perkotaan oleh Perumda Pasar Jaya.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0A2540]">
+                    <span class="toggle-label">Lihat Implementasi Lapangan</span>
+                    <i class="fa-solid fa-chevron-down transition-transform duration-200 toggle-icon"></i>
+                </div>
+            </div>
+
+            <!-- Peran 5 -->
+            <div onclick="togglePeranCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-600 transition-all cursor-pointer group md:col-span-2 lg:col-span-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center text-xl group-hover:bg-emerald-700 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-people-carry-box"></i>
+                    </div>
+                    <span class="text-xs font-bold text-slate-400">05 / 05</span>
+                </div>
+                <h3 class="font-bold text-lg text-[#0A2540] mb-2">Penggerak Lapangan Kerja &amp; Kemitraan UMKM</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Menyerap jutaan tenaga kerja secara langsung maupun melalui ekosistem rantai pasok nasional dan lokal, sekaligus memperluas akses permodalan, pelatihan digital, dan kemitraan usaha bagi pelaku UMKM serta koperasi di seluruh Indonesia.
+                </p>
+                <div class="peran-detail hidden mt-4 pt-4 border-t border-slate-100 text-xs text-slate-700 bg-emerald-50/70 p-3.5 rounded-xl space-y-1.5 animate-fade-up">
+                    <strong class="text-emerald-800 block"><i class="fa-solid fa-circle-info mr-1"></i> Implementasi Lapangan:</strong>
+                    <p>Penyaluran Kredit Usaha Rakyat (KUR) oleh PT Bank Rakyat Indonesia (Persero) Tbk dan Bank Pembangunan Daerah (BPD), program pemberdayaan Rumah BUMN, serta penyerapan hasil panen petani lokal oleh Perum BULOG.</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-700">
+                    <span class="toggle-label">Lihat Implementasi Lapangan</span>
+                    <i class="fa-solid fa-chevron-down transition-transform duration-200 toggle-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         BAGIAN 4: MATRIKS KOMPARASI BUMN VS BUMD (#komparasi)
+    ====================================================================== -->
+    <section id="komparasi" class="py-16 md:py-24 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-10">
+                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0066B2] mb-2">
+                    <span class="w-6 h-0.5 bg-[#D97706]"></span>
+                    <span>Bagian 04 &bull; Analisis Komparatif</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A2540]">
+                    Matriks Komparasi BUMN vs BUMD
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Perbandingan sistematis antara Badan Usaha Milik Negara dan Badan Usaha Milik Daerah berdasarkan 7 parameter kelembagaan dan operasional.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-md overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[740px]">
+                        <thead>
+                            <tr class="bg-[#0A2540] text-white">
+                                <th class="py-4 px-6 font-bold text-xs uppercase tracking-wider w-[22%]">Aspek Pembanding</th>
+                                <th class="py-4 px-6 font-bold text-xs uppercase tracking-wider w-[39%] bg-[#0066B2] border-l border-white/10">
+                                    <i class="fa-solid fa-landmark text-amber-300 mr-2"></i>BUMN (Tingkat Nasional)
+                                </th>
+                                <th class="py-4 px-6 font-bold text-xs uppercase tracking-wider w-[39%] bg-[#0284C7] border-l border-white/10">
+                                    <i class="fa-solid fa-city text-amber-200 mr-2"></i>BUMD (Tingkat Daerah)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 text-sm">
+                            <tr class="hover:bg-slate-50/90 transition-colors">
+                                <td class="py-4 px-6 font-bold text-[#0A2540] bg-slate-50/70">1. Pemilik Modal</td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Seluruh atau paling sedikit <strong>51% modalnya dimiliki oleh Pemerintah Pusat</strong> (kekayaan negara yang dipisahkan dari APBN).
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Seluruh atau paling sedikit <strong>51% modalnya dimiliki oleh Pemerintah Daerah</strong> (kekayaan daerah yang dipisahkan dari APBD).
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/90 transition-colors">
+                                <td class="py-4 px-6 font-bold text-[#0A2540] bg-slate-50/70">2. Dasar Hukum Utama</td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Pasal 33 UUD 1945 dan <strong>UU No. 19 Tahun 2003</strong> tentang Badan Usaha Milik Negara.
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Pasal 33 UUD 1945, <strong>UU No. 23 Tahun 2014</strong> tentang Pemda, <strong>PP No. 54 Tahun 2017</strong> tentang BUMD, &amp; Perda.
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/90 transition-colors">
+                                <td class="py-4 px-6 font-bold text-[#0A2540] bg-slate-50/70">3. Tujuan Utama</td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Menyelenggarakan kemanfaatan umum berskala nasional, memupuk keuntungan (<em>profit</em>), serta menjadi perintis sektor strategis nasional.
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Memberikan manfaat bagi perkembangan ekonomi daerah, melayani kebutuhan dasar masyarakat lokal, dan meningkatkan <strong>PAD</strong>.
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/90 transition-colors">
+                                <td class="py-4 px-6 font-bold text-[#0A2540] bg-slate-50/70">4. Bentuk Badan Usaha</td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    <span class="inline-block px-2.5 py-0.5 rounded bg-blue-100 text-[#0066B2] font-bold text-xs mr-1">Persero</span> (Perusahaan Perseroan) dan
+                                    <span class="inline-block px-2.5 py-0.5 rounded bg-amber-100 text-[#D97706] font-bold text-xs">Perum</span> (Perusahaan Umum).
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    <span class="inline-block px-2.5 py-0.5 rounded bg-sky-100 text-[#0284C7] font-bold text-xs mr-1">Perseroda</span> (Perusahaan Perseroan Daerah) dan
+                                    <span class="inline-block px-2.5 py-0.5 rounded bg-slate-200 text-[#0A2540] font-bold text-xs">Perumda</span> (Perusahaan Umum Daerah).
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/90 transition-colors">
+                                <td class="py-4 px-6 font-bold text-[#0A2540] bg-slate-50/70">5. Kontribusi Keuangan Negara / Daerah</td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Setoran dividen dan pajak disalurkan ke kas negara sebagai komponen <strong>APBN (Penerimaan Negara Bukan Pajak / PNBP)</strong>.
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Setoran bagian laba/dividen disalurkan ke kas daerah sebagai sumber <strong>Pendapatan Asli Daerah (PAD)</strong> dalam APBD.
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/90 transition-colors">
+                                <td class="py-4 px-6 font-bold text-[#0A2540] bg-slate-50/70">6. Wilayah Operasional</td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Mencakup seluruh wilayah <strong>Nasional Indonesia</strong> hingga ekspansi bisnis dan investasi ke tingkat internasional.
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    Berfokus pada wilayah administrasi <strong>Provinsi, Kabupaten, atau Kota</strong> daerah pemiliknya.
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-slate-50/90 transition-colors">
+                                <td class="py-4 px-6 font-bold text-[#0A2540] bg-slate-50/70">7. Pembina / Pengawas</td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    <strong>Menteri BUMN</strong> (selaku RUPS/KPM), Kementerian Keuangan, dan Kementerian Teknis terkait.
+                                </td>
+                                <td class="py-4 px-6 text-slate-700 border-l border-slate-100">
+                                    <strong>Kepala Daerah</strong> (Gubernur / Bupati / Wali Kota selaku RUPS/KPM) serta pengawasan DPRD dan Kementerian Dalam Negeri.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         BAGIAN 5: DIREKTORI PERUSAHAAN BUMN & BUMD (#direktori)
+    ====================================================================== -->
+    <section id="direktori" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+            <div>
+                <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0066B2] mb-2">
+                    <span class="w-6 h-0.5 bg-[#D97706]"></span>
+                    <span>Bagian 05 &bull; Direktori Entitas</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A2540]">
+                    Direktori Perusahaan BUMN &amp; BUMD
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base max-w-2xl">
+                    Telusuri profil perusahaan BUMN dan BUMD berdasarkan kategori bentuk hukum atau kata kunci sektor industri. Klik kartu untuk melihat profil lengkap.
+                </p>
+            </div>
+
+            <!-- Search Bar Direktori -->
+            <div class="w-full lg:w-80 relative">
+                <i class="fa-solid fa-magnifying-glass text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 text-sm"></i>
+                <input 
+                    type="text" 
+                    id="direktori-search" 
+                    placeholder="Cari nama perusahaan atau sektor..." 
+                    class="w-full pl-11 pr-4 py-3 rounded-xl bg-white border border-slate-300 text-sm text-[#0A2540] placeholder-slate-400 focus:outline-none focus:border-[#0066B2] focus:ring-2 focus:ring-[#0066B2]/15 shadow-sm transition-all"
+                >
+            </div>
+        </div>
+
+        <!-- Filter Kategori Interaktif -->
+        <div class="flex flex-wrap items-center gap-2.5 mb-8" id="direktori-filters">
+            <button onclick="setDirektoriFilter('all', this)" class="dir-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0A2540] text-white shadow-sm transition-all cursor-pointer">
+                Semua (10)
+            </button>
+            <button onclick="setDirektoriFilter('BUMN Persero', this)" class="dir-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all cursor-pointer">
+                BUMN Persero
+            </button>
+            <button onclick="setDirektoriFilter('BUMN Perum', this)" class="dir-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all cursor-pointer">
+                BUMN Perum
+            </button>
+            <button onclick="setDirektoriFilter('BUMD Perseroda', this)" class="dir-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all cursor-pointer">
+                BUMD Perseroda
+            </button>
+            <button onclick="setDirektoriFilter('BUMD Perumda', this)" class="dir-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all cursor-pointer">
+                BUMD Perumda
+            </button>
+        </div>
+
+        <!-- Grid Kartu Direktori Perusahaan -->
+        <div id="direktori-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Kartu di-render secara dinamis oleh JavaScript -->
+        </div>
+
+        <!-- Empty State saat Pencarian Tidak Ditemukan -->
+        <div id="direktori-empty" class="hidden bg-white rounded-2xl border border-slate-200 p-12 text-center">
+            <div class="w-14 h-14 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center text-2xl mx-auto mb-3">
+                <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <h3 class="font-bold text-lg text-[#0A2540]">Perusahaan Tidak Ditemukan</h3>
+            <p class="text-slate-500 text-sm mt-1">Coba gunakan kata kunci pencarian lain atau pilih filter kategori "Semua".</p>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         MODAL DETAIL PROFIL PERUSAHAAN
+    ====================================================================== -->
+    <div id="company-modal" class="hidden fixed inset-0 z-50 bg-[#0A2540]/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden animate-fade-up">
+            <!-- Header Modal Korporat -->
+            <div class="bg-gradient-to-r from-[#0A2540] to-[#0066B2] p-6 text-white flex items-start justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <div id="modal-icon-box" class="w-14 h-14 rounded-2xl bg-white/15 border border-white/25 flex items-center justify-center text-2xl shrink-0">
+                        <i id="modal-icon" class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <span id="modal-badge" class="inline-block px-2.5 py-0.5 rounded-md bg-amber-400 text-[#0A2540] font-extrabold text-[11px] uppercase tracking-wider mb-1.5">
+                            BUMN PERSERO
+                        </span>
+                        <h3 id="modal-name" class="font-extrabold text-xl sm:text-2xl leading-tight">Nama Perusahaan</h3>
+                    </div>
+                </div>
+                <button onclick="closeCompanyModal()" aria-label="Tutup Detail" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer shrink-0">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Isi Detail Profil Perusahaan -->
+            <div class="p-6 sm:p-8 space-y-5 text-sm">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                        <span class="text-xs font-semibold text-slate-500 block mb-1">Sektor Industri</span>
+                        <strong id="modal-sector" class="text-[#0A2540] text-sm sm:text-base">-</strong>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                        <span class="text-xs font-semibold text-slate-500 block mb-1">Kepemilikan Modal</span>
+                        <strong id="modal-ownership" class="text-[#0066B2] text-sm sm:text-base">-</strong>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                    <span class="text-xs font-semibold text-slate-500 block mb-1">Bentuk Hukum &amp; Dasar Operasional</span>
+                    <strong id="modal-legal" class="text-[#0A2540]">-</strong>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-[#0A2540] text-base mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-award text-[#D97706]"></i>
+                        Peran Strategis bagi Perekonomian &amp; Masyarakat
+                    </h4>
+                    <p id="modal-role" class="text-slate-700 leading-relaxed text-sm sm:text-base bg-blue-50/50 border border-blue-100 p-4 rounded-2xl">
+                        -
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Modal -->
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+                <button onclick="closeCompanyModal()" class="px-5 py-2.5 rounded-xl bg-[#0A2540] hover:bg-[#0066B2] text-white font-bold text-xs sm:text-sm transition-colors cursor-pointer">
+                    Tutup Profil Entitas
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         FOOTER KORPORAT
+    ====================================================================== -->
+    <footer class="bg-[#0A2540] text-slate-300 border-t border-white/10 pt-14 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
+                <!-- Kolom 1: Identitas Portal -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0066B2] to-[#0284C7] border border-amber-400/50 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-landmark text-amber-300"></i>
+                        </div>
+                        <div>
+                            <span class="font-extrabold text-white text-base tracking-tight block leading-none">
+                                BUMN &amp; BUMD <span class="text-amber-400">INDONESIA</span>
+                            </span>
+                            <span class="text-[11px] text-sky-200/80 uppercase tracking-wider block mt-1">
+                                Sinergi Membangun Ekonomi Negeri
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Portal informasi kelembagaan Badan Usaha Milik Negara dan Badan Usaha Milik Daerah yang menyajikan struktur tata kelola, klasifikasi badan hukum, peran strategis ekonomi, dan direktori entitas usaha publik di Indonesia.
+                    </p>
+                    <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300">
+                        <i class="fa-solid fa-shield-check text-emerald-400"></i>
+                        <span>Berlandaskan Prinsip Good Corporate Governance (GCG)</span>
+                    </div>
+                </div>
+
+                <!-- Kolom 2: Navigasi Cepat -->
+                <div class="md:col-span-3">
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Navigasi Portal</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#beranda" class="text-slate-400 hover:text-amber-300 transition-colors">Beranda Utama</a></li>
+                        <li><a href="#profil" class="text-slate-400 hover:text-amber-300 transition-colors">Profil &amp; Landasan Hukum</a></li>
+                        <li><a href="#bentuk-usaha" class="text-slate-400 hover:text-amber-300 transition-colors">Klasifikasi Bentuk Usaha</a></li>
+                        <li><a href="#peran" class="text-slate-400 hover:text-amber-300 transition-colors">Peran Strategis Ekonomi</a></li>
+                        <li><a href="#komparasi" class="text-slate-400 hover:text-amber-300 transition-colors">Matriks Komparasi</a></li>
+                        <li><a href="#direktori" class="text-slate-400 hover:text-amber-300 transition-colors">Direktori Perusahaan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Regulasi Rujukan -->
+                <div class="md:col-span-4">
+                    <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-4">Regulasi &amp; Dasar Hukum Rujukan</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-scale-balanced text-[#D97706] mt-1 shrink-0"></i>
+                            <span>UUD Negara Republik Indonesia Tahun 1945 Pasal 33 Ayat (2) dan (3)</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-file-contract text-sky-400 mt-1 shrink-0"></i>
+                            <span>Undang-Undang Nomor 19 Tahun 2003 tentang Badan Usaha Milik Negara</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-file-contract text-sky-400 mt-1 shrink-0"></i>
+                            <span>Undang-Undang Nomor 23 Tahun 2014 tentang Pemerintahan Daerah</span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-file-contract text-sky-400 mt-1 shrink-0"></i>
+                            <span>Peraturan Pemerintah Nomor 54 Tahun 2017 tentang Badan Usaha Milik Daerah</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+                <p>&copy; 2026 Portal BUMN &amp; BUMD Indonesia &mdash; Sinergi Membangun Ekonomi Negeri.</p>
+                <p class="text-slate-400">Informasi Kelembagaan Ekonomi Nasional &amp; Daerah</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         JAVASCRIPT INTERAKTIF PORTAL
+    ====================================================================== -->
+    <script>
+        // -----------------------------------------------------------------
+        // 1. NAVIGASI MOBILE
+        // -----------------------------------------------------------------
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // -----------------------------------------------------------------
+        // 2. TAB INTERAKTIF PROFIL KELEMBAGAAN (BUMN VS BUMD)
+        // -----------------------------------------------------------------
+        function switchProfilTab(target) {
+            const btnBumn = document.getElementById('btn-profil-bumn');
+            const btnBumd = document.getElementById('btn-profil-bumd');
+            const panelBumn = document.getElementById('panel-profil-bumn');
+            const panelBumd = document.getElementById('panel-profil-bumd');
+
+            if (target === 'bumn') {
+                btnBumn.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0A2540] text-white shadow-sm transition-all flex items-center gap-2 cursor-pointer';
+                btnBumd.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-[#0A2540] transition-all flex items-center gap-2 cursor-pointer';
+                panelBumn.classList.remove('hidden');
+                panelBumd.classList.add('hidden');
+            } else {
+                btnBumd.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0284C7] text-white shadow-sm transition-all flex items-center gap-2 cursor-pointer';
+                btnBumn.className = 'px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 hover:text-[#0A2540] transition-all flex items-center gap-2 cursor-pointer';
+                panelBumd.classList.remove('hidden');
+                panelBumn.classList.add('hidden');
+            }
+        }
+
+        // -----------------------------------------------------------------
+        // 3. INTERAKSI KARTU PERAN STRATEGIS
+        // -----------------------------------------------------------------
+        function togglePeranCard(card) {
+            const detail = card.querySelector('.peran-detail');
+            const icon = card.querySelector('.toggle-icon');
+            const label = card.querySelector('.toggle-label');
+
+            const isHidden = detail.classList.contains('hidden');
+            if (isHidden) {
+                detail.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+                label.textContent = 'Sembunyikan Detail';
+            } else {
+                detail.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+                label.textContent = 'Lihat Implementasi Lapangan';
+            }
+        }
+
+        // -----------------------------------------------------------------
+        // 4. DATA & DIREKTORI PERUSAHAAN BUMN & BUMD
+        // -----------------------------------------------------------------
+        const direktoriData = [
+            {
+                id: 1,
+                nama: 'PT Pertamina (Persero)',
+                kategori: 'BUMN Persero',
+                sektor: 'Energi, Minyak & Gas Bumi',
+                kepemilikan: '100% Negara Republik Indonesia',
+                bentukHukum: 'Perusahaan Perseroan (Persero) berdasarkan UU No. 19 Tahun 2003',
+                icon: 'fa-oil-well',
+                badgeBg: 'bg-blue-50 text-[#0066B2] border-blue-200',
+                iconBg: 'bg-[#0066B2] text-white',
+                ringkasan: 'Mengelola kegiatan usaha hulu hingga hilir minyak, gas bumi, dan energi baru terbarukan demi ketahanan energi nasional.',
+                peranLengkap: 'Menjamin ketersediaan dan distribusi Bahan Bakar Minyak (BBM) serta LPG di seluruh wilayah Indonesia termasuk program BBM Satu Harga di kawasan 3T, sekaligus menjadi salah satu penyumbang dividen dan pajak terbesar bagi APBN.'
+            },
+            {
+                id: 2,
+                nama: 'PT PLN (Persero)',
+                kategori: 'BUMN Persero',
+                sektor: 'Ketenagalistrikan Nasional',
+                kepemilikan: '100% Negara Republik Indonesia',
+                bentukHukum: 'Perusahaan Perseroan (Persero) berdasarkan UU No. 19 Tahun 2003',
+                icon: 'fa-bolt',
+                badgeBg: 'bg-blue-50 text-[#0066B2] border-blue-200',
+                iconBg: 'bg-[#0A2540] text-amber-400',
+                ringkasan: 'Menyelenggarakan penyediaan tenaga listrik bagi kepentingan umum dan mendorong rasio elektrifikasi hingga pelosok nusantara.',
+                peranLengkap: 'Mengelola pembangkitan, transmisi, dan distribusi tenaga listrik nasional, menyalurkan subsidi listrik tepat sasaran bagi masyarakat prasejahtera, serta mempercepat transisi energi bersih untuk mendukung pertumbuhan industri nasional.'
+            },
+            {
+                id: 3,
+                nama: 'PT Bank Rakyat Indonesia (Persero) Tbk',
+                kategori: 'BUMN Persero',
+                sektor: 'Perbankan & Pembiayaan UMKM',
+                kepemilikan: 'Mayoritas Negara RI (Min. 51%) & Publik',
+                bentukHukum: 'Perusahaan Perseroan Terbuka (Persero Tbk)',
+                icon: 'fa-building-columns',
+                badgeBg: 'bg-blue-50 text-[#0066B2] border-blue-200',
+                iconBg: 'bg-[#0066B2] text-white',
+                ringkasan: 'Lembaga perbankan nasional dengan fokus utama pemberdayaan segmen mikro, kecil, dan menengah (UMKM) hingga pedesaan.',
+                peranLengkap: 'Memperluas inklusi keuangan nasional melalui jaringan agen BRILink dan unit kerja hingga tingkat kecamatan/desa, menyalurkan Kredit Usaha Rakyat (KUR), serta menyetorkan dividen signifikan ke kas negara.'
+            },
+            {
+                id: 4,
+                nama: 'PT Kereta Api Indonesia (Persero)',
+                kategori: 'BUMN Persero',
+                sektor: 'Transportasi Perkeretaapian & Logistik',
+                kepemilikan: '100% Negara Republik Indonesia',
+                bentukHukum: 'Perusahaan Perseroan (Persero) berdasarkan UU No. 19 Tahun 2003',
+                icon: 'fa-train',
+                badgeBg: 'bg-blue-50 text-[#0066B2] border-blue-200',
+                iconBg: 'bg-[#0A2540] text-sky-300',
+                ringkasan: 'Menyediakan layanan transportasi kereta api penumpang antarkota, komuter perkotaan, dan angkutan logistik barang nasional.',
+                peranLengkap: 'Meningkatkan konektivitas antarwilayah dan mobilitas masyarakat secara massal, aman, tepat waktu, serta mendukung efisiensi rantai pasok logistik nasional dan pengurangan kemacetan jalan raya.'
+            },
+            {
+                id: 5,
+                nama: 'Perum BULOG',
+                kategori: 'BUMN Perum',
+                sektor: 'Ketahanan Pangan & Logistik',
+                kepemilikan: '100% Negara RI (Modal Tidak Terbagi atas Saham)',
+                bentukHukum: 'Perusahaan Umum (Perum) berdasarkan UU No. 19 Tahun 2003',
+                icon: 'fa-wheat-awn',
+                badgeBg: 'bg-amber-50 text-[#D97706] border-amber-200',
+                iconBg: 'bg-[#D97706] text-white',
+                ringkasan: 'Menjaga stabilitas harga pangan pokok, mengelola cadangan beras pemerintah, dan menyerap hasil panen petani lokal.',
+                peranLengkap: 'Melaksanakan tugas pelayanan publik (PSO) di bidang pangan melalui pengadaan gabah/beras dalam negeri untuk melindungi pendapatan petani sekaligus menjaga keterjangkauan harga beras bagi konsumen di seluruh Indonesia.'
+            },
+            {
+                id: 6,
+                nama: 'Perum DAMRI',
+                kategori: 'BUMN Perum',
+                sektor: 'Transportasi Jalan & Angkutan Perintis',
+                kepemilikan: '100% Negara RI (Modal Tidak Terbagi atas Saham)',
+                bentukHukum: 'Perusahaan Umum (Perum) berdasarkan UU No. 19 Tahun 2003',
+                icon: 'fa-bus',
+                badgeBg: 'bg-amber-50 text-[#D97706] border-amber-200',
+                iconBg: 'bg-[#D97706] text-white',
+                ringkasan: 'Menyelenggarakan angkutan penumpang dan barang berbasis jalan raya termasuk trayek perintis di kawasan 3T dan perbatasan.',
+                peranLengkap: 'Menjalankan fungsi perintis transportasi darat pada rute-rute terpencil yang belum dilayani operator swasta demi membuka isolasi wilayah, memperlancar arus barang, dan mendorong pertumbuhan ekonomi daerah.'
+            },
+            {
+                id: 7,
+                nama: 'PT MRT Jakarta (Perseroda)',
+                kategori: 'BUMD Perseroda',
+                sektor: 'Transportasi Massal Perkotaan',
+                kepemilikan: 'Mayoritas Pemerintah Provinsi DKI Jakarta (Min. 51%)',
+                bentukHukum: 'Perusahaan Perseroan Daerah (Perseroda) sesuai PP No. 54 Tahun 2017',
+                icon: 'fa-train-subway',
+                badgeBg: 'bg-sky-50 text-[#0284C7] border-sky-200',
+                iconBg: 'bg-[#0284C7] text-white',
+                ringkasan: 'Membangun, mengoperasikan, dan mengembangkan sistem transportasi massal cepat (Moda Raya Terpadu) beserta kawasan TOD.',
+                peranLengkap: 'Menyediakan tulang punggung transportasi publik modern yang terintegrasi di kawasan perkotaan, mengurangi kerugian ekonomi akibat kemacetan lalu lintas, serta mengembangkan kawasan berorientasi transit (Transit Oriented Development).'
+            },
+            {
+                id: 8,
+                nama: 'PT Bank Pembangunan Daerah (BPD)',
+                kategori: 'BUMD Perseroda',
+                sektor: 'Perbankan & Keuangan Daerah',
+                kepemilikan: 'Pemerintah Provinsi & Kabupaten/Kota Setempat',
+                bentukHukum: 'Perusahaan Perseroan Daerah (Perseroda) sesuai PP No. 54 Tahun 2017',
+                icon: 'fa-landmark-dome',
+                badgeBg: 'bg-sky-50 text-[#0284C7] border-sky-200',
+                iconBg: 'bg-[#0284C7] text-white',
+                ringkasan: 'Contoh: Bank Sulselbar, Bank DKI, Bank BJB. Bertindak sebagai pemegang kas daerah dan motor pembiayaan ekonomi regional.',
+                peranLengkap: 'Mengelola Rekening Kas Umum Daerah (RKUD), menyalurkan kredit produktif bagi UMKM dan aparatur daerah, mendorong digitalisasi transaksi keuangan pemda, serta menyetorkan dividen laba sebagai sumber utama PAD.'
+            },
+            {
+                id: 9,
+                nama: 'Perumda Air Minum (PDAM)',
+                kategori: 'BUMD Perumda',
+                sektor: 'Penyediaan Air Bersih Daerah',
+                kepemilikan: '100% Pemerintah Daerah (Kabupaten/Kota/Provinsi)',
+                bentukHukum: 'Perusahaan Umum Daerah (Perumda) sesuai PP No. 54 Tahun 2017',
+                icon: 'fa-faucet-drip',
+                badgeBg: 'bg-slate-100 text-[#0A2540] border-slate-300',
+                iconBg: 'bg-[#0A2540] text-sky-300',
+                ringkasan: 'Mengelola sistem penyediaan air minum bersih dan sehat bagi rumah tangga, fasilitas umum, dan industri di tingkat daerah.',
+                peranLengkap: 'Memenuhi hak dasar masyarakat daerah atas akses air bersih yang memenuhi standar kesehatan dengan tarif yang adil dan terjangkau, sekaligus mendukung sanitasi lingkungan perkotaan dan pedesaan.'
+            },
+            {
+                id: 10,
+                nama: 'Perumda Pasar Jaya',
+                kategori: 'BUMD Perumda',
+                sektor: 'Pengelolaan Pasar Rakyat & Pangan Daerah',
+                kepemilikan: '100% Pemerintah Provinsi DKI Jakarta',
+                bentukHukum: 'Perusahaan Umum Daerah (Perumda) sesuai PP No. 54 Tahun 2017',
+                icon: 'fa-store',
+                badgeBg: 'bg-slate-100 text-[#0A2540] border-slate-300',
+                iconBg: 'bg-[#0A2540] text-amber-300',
+                ringkasan: 'Mengelola, merevitalisasi, dan mengembangkan pasar tradisional serta pusat distribusi pangan untuk menjaga stabilitas harga daerah.',
+                peranLengkap: 'Menyediakan ruang usaha yang layak dan higienis bagi ribuan pedagang kecil dan menengah, menjaga kelancaran rantai pasok bahan pangan daerah, serta membantu pengendalian inflasi daerah.'
+            }
+        ];
+
+        let activeFilter = 'all';
+        let searchQuery = '';
+
+        function renderDirektori() {
+            const grid = document.getElementById('direktori-grid');
+            const emptyState = document.getElementById('direktori-empty');
+
+            const filtered = direktoriData.filter(item => {
+                const matchFilter = activeFilter === 'all' || item.kategori === activeFilter;
+                const q = searchQuery.toLowerCase().trim();
+                const matchSearch = !q || 
+                    item.nama.toLowerCase().includes(q) || 
+                    item.sektor.toLowerCase().includes(q) || 
+                    item.kategori.toLowerCase().includes(q) ||
+                    item.ringkasan.toLowerCase().includes(q);
+                return matchFilter && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = filtered.map(item => `
+                <div onclick="openCompanyModal(${item.id})" class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg hover:border-[#0066B2] hover:-translate-y-1 transition-all flex flex-col justify-between cursor-pointer group animate-fade-up">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <div class="w-11 h-11 rounded-xl ${item.iconBg} flex items-center justify-center text-lg shadow-sm group-hover:scale-105 transition-transform">
+                                <i class="fa-solid ${item.icon}"></i>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg border text-[11px] font-bold uppercase tracking-wider ${item.badgeBg}">
+                                ${item.kategori}
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-base sm:text-lg text-[#0A2540] group-hover:text-[#0066B2] transition-colors leading-snug mb-1.5">
+                            ${item.nama}
+                        </h3>
+                        <p class="text-xs font-semibold text-[#D97706] mb-3">
+                            <i class="fa-solid fa-layer-group mr-1"></i>${item.sektor}
+                        </p>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                            ${item.ringkasan}
+                        </p>
+                    </div>
+
+                    <div class="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0066B2]">
+                        <span>Lihat Profil Lengkap</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setDirektoriFilter(kategori, btnClicked) {
+            activeFilter = kategori;
+            document.querySelectorAll('.dir-filter-btn').forEach(btn => {
+                btn.className = 'dir-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-all cursor-pointer';
+            });
+            btnClicked.className = 'dir-filter-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0A2540] text-white shadow-sm transition-all cursor-pointer';
+            renderDirektori();
+        }
+
+        document.getElementById('direktori-search').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderDirektori();
+        });
+
+        // -----------------------------------------------------------------
+        // 5. MODAL DETAIL PROFIL PERUSAHAAN
+        // -----------------------------------------------------------------
+        function openCompanyModal(id) {
+            const company = direktoriData.find(item => item.id === id);
+            if (!company) return;
+
+            document.getElementById('modal-badge').textContent = company.kategori;
+            document.getElementById('modal-name').textContent = company.nama;
+            document.getElementById('modal-sector').textContent = company.sektor;
+            document.getElementById('modal-ownership').textContent = company.kepemilikan;
+            document.getElementById('modal-legal').textContent = company.bentukHukum;
+            document.getElementById('modal-role').textContent = company.peranLengkap;
+
+            const iconEl = document.getElementById('modal-icon');
+            iconEl.className = `fa-solid ${company.icon}`;
+
+            const modal = document.getElementById('company-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCompanyModal() {
+            const modal = document.getElementById('company-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Tutup modal saat klik area luar atau menekan tombol Escape
+        document.getElementById('company-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'company-modal') {
+                closeCompanyModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCompanyModal();
+            }
+        });
+
+        // -----------------------------------------------------------------
+        // 6. INISIALISASI AWAL
+        // -----------------------------------------------------------------
+        document.addEventListener('DOMContentLoaded', () => {
+            renderDirektori();
+        });
+    </script>
+</body>
+</html>
